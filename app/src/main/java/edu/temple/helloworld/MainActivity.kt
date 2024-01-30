@@ -2,6 +2,7 @@ package edu.temple.helloworld
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -20,7 +21,11 @@ class MainActivity : AppCompatActivity() {
 
         
         // Respond to button click event per specifications
-
+        val button : Button = findViewById(R.id.clickMeButton)
+        val editText : EditText = findViewById(R.id.nameEditText)
+        button.setOnClickListener{v: View? ->
+            displayTextView.text =  "Hello ${editText.text}"
+        }
 
     }
 }
